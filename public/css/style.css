@@ -1,32 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
 
 :root {
-  --bg: #0d1117;
-  --bg-secondary: #0f1620;
-  --text: #e2e8f0;
-  --text-muted: #64748b;
-  --accent: #a78bfa;
-  --accent-hover: #7c3aed;
-  --border: #1e2a38;
+  --bg: #fafaf9;
+  --bg-secondary: #ffffff;
+  --text: #1c1917;
+  --text-muted: #78716c;
+  --accent: #d97706;
+  --accent-hover: #b45309;
+  --border: #e7e5e4;
 
   --font-size-base: 1rem;
   --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
   --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
   --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 
-  --border-radius: 14px;
+  --border-radius: 4px;
 }
 
-/* Base */
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--text);
   font-size: var(--font-size-base);
-  background: radial-gradient(circle at top, #111827, #0d1117);
+  background: var(--bg);
   margin: 0;
   line-height: 1.6;
   letter-spacing: 0.15px;
@@ -42,15 +41,20 @@ a:hover {
   color: var(--accent);
 }
 
-h1 { font-size: var(--font-size-xl); }
-h2 { font-size: var(--font-size-lg); }
-h3 { font-size: var(--font-size-md); }
+h1 {
+  font-size: var(--font-size-xl);
+}
+h2 {
+  font-size: var(--font-size-lg);
+}
+h3 {
+  font-size: var(--font-size-md);
+}
 
-/* Inputs */
 input,
 select,
 textarea {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   width: 100%;
   padding: 0.7rem 0.85rem;
   margin-bottom: 1rem;
@@ -68,34 +72,32 @@ textarea:focus {
   border-color: var(--accent);
 }
 
-/* Buttons */
 .btn {
-  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  background: var(--accent);
   border: none;
   color: white;
   padding: 10px 22px;
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: all 0.25s ease;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
 }
 
 .btn-delete {
-  background: linear-gradient(135deg, #dc2626, #ef4444);
+  background: #dc2626;
 }
 
 .btn-delete:hover {
-  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
 }
 
-/* Layout */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -106,7 +108,6 @@ textarea:focus {
   padding: 30px 0;
 }
 
-/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -119,10 +120,7 @@ textarea:focus {
 .header__logo {
   font-weight: 800;
   font-size: 1.35rem;
-  background: linear-gradient(90deg, #a78bfa, #60a5fa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
   letter-spacing: -0.3px;
 }
 
@@ -137,7 +135,7 @@ textarea:focus {
   position: relative;
   font-weight: 500;
   font-size: 0.9rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   transition: color 0.2s;
 }
 
@@ -148,9 +146,9 @@ textarea:focus {
   bottom: -4px;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, #a78bfa, #60a5fa);
+  background: var(--accent);
   transition: width 0.3s ease;
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 .header__nav a:hover {
@@ -168,10 +166,10 @@ textarea:focus {
 .header__button button {
   border: 1px solid var(--border);
   background: transparent;
-  color: #94a3b8;
+  color: var(--text-muted);
   padding: 7px 15px;
   border-radius: var(--border-radius);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -182,16 +180,14 @@ textarea:focus {
   color: var(--accent);
 }
 
-/* Hero */
 .hero-image {
   border-radius: var(--border-radius);
   overflow: hidden;
   margin-top: 24px;
   border: 1px solid var(--border);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Author */
 .author {
   text-align: center;
   margin-top: 40px;
@@ -200,7 +196,7 @@ textarea:focus {
 .author__heading {
   font-weight: 700;
   font-size: 1.2rem;
-  color: #f1f5f9;
+  color: var(--text);
 }
 
 .author__body {
@@ -212,12 +208,11 @@ textarea:focus {
   line-height: 1.7;
 }
 
-/* Articles */
 .articles__heading {
   margin-top: 3.5rem;
   font-weight: 500;
   font-size: 1.3rem;
-  color: #f1f5f9;
+  color: var(--text);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -243,17 +238,18 @@ textarea:focus {
   margin-bottom: 14px;
   background: var(--bg-secondary);
   transition: all 0.25s ease;
+  border-left: 3px solid transparent;
 }
 
 .article-ul li:hover {
   transform: translateY(-3px);
-  border-color: rgba(167, 139, 250, 0.35);
-  background: #111827;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-left-color: var(--accent);
+  background: #fffbf5;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
 }
 
 .article-list__date {
-  color: #475569;
+  color: #a8a29e;
   font-size: 0.82rem;
   font-weight: 400;
   margin-top: 4px;
@@ -268,21 +264,18 @@ textarea:focus {
   font-size: 0.95rem;
 }
 
-/* Article page */
 .article {
   line-height: 1.9;
   font-size: 1.05rem;
 }
 
-/* Footer */
 .footer {
   margin: 5rem 0 2rem;
   text-align: center;
-  color: #334155;
+  color: #d6d3d1;
   font-size: 0.85rem;
 }
 
-/* Admin */
 .admin-title {
   display: flex;
   justify-content: space-between;
@@ -296,17 +289,16 @@ textarea:focus {
   justify-content: space-between;
   align-items: center;
   padding: 14px 0;
-  border-bottom: 1px solid #1a222e;
+  border-bottom: 1px solid var(--border);
 }
 
-/* Search */
 .searchBar {
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border);
   padding: 14px 0;
   backdrop-filter: blur(10px);
 
-  position: fixed;      
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -330,7 +322,7 @@ textarea:focus {
   content: "⌕";
   position: absolute;
   left: 14px;
-  color: #475569;
+  color: #a8a29e;
   font-size: 1.1rem;
   pointer-events: none;
 }
@@ -342,20 +334,22 @@ textarea:focus {
   color: var(--text);
   padding: 0.65rem 0.85rem 0.65rem 2.4rem;
   font-size: 0.9rem;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   width: 100%;
   margin-bottom: 0;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 #searchInput:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.15);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
 }
 
 #searchInput::placeholder {
-  color: #475569;
+  color: #a8a29e;
 }
 
 .searchBar .container {
@@ -365,7 +359,7 @@ textarea:focus {
 }
 
 #searchClose {
-  color: #475569;
+  color: var(--text-muted);
   font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
@@ -374,20 +368,21 @@ textarea:focus {
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
   transition: all 0.2s;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 #searchClose:hover {
   color: var(--accent);
   border-color: var(--accent);
-  background: rgba(167, 139, 250, 0.08);
+  background: rgba(217, 119, 6, 0.06);
 }
+
 .searchBar.open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-/* Pagination */
+
 .pagination {
   color: var(--text-muted);
   font-size: 0.88rem;

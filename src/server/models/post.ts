@@ -1,6 +1,5 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
 
-
 export interface IPost extends Document {
   title: string;
   body: string;

@@ -1,16 +1,10 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-/**
- * User Interface
- */
 export interface IUser extends Document {
   username: string;
   password: string;
 }
 
-/**
- * Schema
- */
 const UserSchema = new Schema<IUser>({
   username: {
     type: String,
@@ -24,7 +18,4 @@ const UserSchema = new Schema<IUser>({
   },
 });
 
-/**
- * Model
- */
 export const User = mongoose.model<IUser>("User", UserSchema);
