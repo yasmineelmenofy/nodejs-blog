@@ -20,7 +20,7 @@ A full-stack blog application built with **Node.js**, **Express**, **TypeScript*
 ## Tech Stack
 
 | Layer | Technology |
-|---|---|
+| ------ | ---------- |
 | Runtime | Node.js |
 | Framework | Express.js |
 | Language | TypeScript |
@@ -33,7 +33,7 @@ A full-stack blog application built with **Node.js**, **Express**, **TypeScript*
 
 ## Project Structure
 
-```
+```text
 src/
 ├── app.ts                        # Entry point
 └── server/
@@ -84,15 +84,15 @@ public/
 
 ### Prerequisites
 
-- Node.js v18+
+- Node.js v20+
 - MongoDB (local or Atlas)
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/nodejs-blog.git
-cd nodejs-blog
+git clone https://github.com/yasmineelmenofy/nodejs-blog.git
+cd nodejs-bolg
 
 # Install dependencies
 npm install
@@ -100,13 +100,19 @@ npm install
 
 ### Environment Variables
 
-Create a `.env` file in the root directory:
+Copy the example environment file:
+
+```bash
+cp .env.example .env
+```
+
+Then update it with your own values:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/nodejs-blog
-JWT_SECRET=your_super_secret_key
-NODE_ENV=development
+MONGO_URI=
+JWT_SECRET=
+ADMIN_SECRET=
 ```
 
 ### Run the App
@@ -127,7 +133,7 @@ npm start
 ### Public Routes
 
 | Method | Route | Description |
-|---|---|---|
+| ------ | ----- | ----------- |
 | GET | `/` | Home page with paginated posts |
 | GET | `/post/:id` | Single post view |
 | POST | `/search` | Search posts |
@@ -136,7 +142,7 @@ npm start
 ### Admin Routes
 
 | Method | Route | Description |
-|---|---|---|
+| ------ | ----- | ----------- |
 | GET | `/admin` | Login page |
 | POST | `/admin` | Login (returns JWT cookie) |
 | GET | `/dashboard` | Post management (auth required) |
@@ -154,7 +160,11 @@ The `/register` endpoint is available to create an admin account:
 ```bash
 curl -X POST http://localhost:5000/register \
   -H "Content-Type: application/json" \
-  -d '{"username": "admin", "password": "yourpassword"}'
+  -d '{
+    "username": "admin",
+    "password": "yourpassword",
+    "adminSecret": "your_admin_secret"
+  }'
 ```
 
 > ⚠️ **Important:** This endpoint is currently unprotected. It is strongly recommended to remove or restrict it after creating your admin account.
@@ -188,7 +198,7 @@ The app uses a centralized error middleware that handles:
 Being transparent about what was original work vs. tutorial-based:
 
 | Part | Origin |
-|---|---|
+| ---- | ------ |
 | EJS views (HTML structure) | Tutorial |
 | CSS styles | Tutorial |
 | Public JS (search toggle) | Tutorial |
@@ -204,7 +214,7 @@ Being transparent about what was original work vs. tutorial-based:
 ## Credits
 
 Frontend views and initial project concept from the tutorial
+
 [**How to Build a Blog with Node.js, Express & MongoDB**](https://www.youtube.com/results?search_query=How+to+Build+a+Blog+with+Node.js+Express+MongoDB).
 
 ---
-
